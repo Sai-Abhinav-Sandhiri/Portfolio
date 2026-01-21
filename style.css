@@ -180,13 +180,13 @@ section {
 
 .modal.active { display: flex; }
 
-.modal video {
-  max-height: 90vh;
-  max-width: 100%;
-  object-fit: contain;
-  box-shadow: 0 0 30px #44d62c;
- /* transition: opacity 0.25s ease; */
+.modal-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -244,3 +244,14 @@ section {
   .nav-btn.next { right: 10px; }
 }
 
+/* =========================
+   VIMEO MODAL IFRAME
+========================= */
+.modal iframe {
+  width: 90vw;
+  height: 90vh;
+  max-width: 1200px;
+  border: none;
+  background: black;
+  box-shadow: 0 0 30px #44d62c;
+}

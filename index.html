@@ -33,34 +33,25 @@ Every frame is crafted with purpose — whether it’s a fast-paced reel or a ci
   <h2 class="section-title">SELECTED PROJECTS</h2>
 
   <div class="grid">
-    <div class="video-card" data-video="https://vimeo.com/1156870631?share=copy&fl=sv&fe=ci">
-      <img src="thumbnails/edit1.png">
-      <video muted loop preload="metadata">
-        <source src="https://vimeo.com/1156870631?share=copy&fl=sv&fe=ci" type="video/mp4">
-      </video>
-    </div>
 
-    <div class="video-card" data-video="https://vimeo.com/1156870817?share=copy&fl=sv&fe=ci">
-      <img src="thumbnails/edit2.png">
-      <video muted loop preload="metadata">
-        <source src="https://vimeo.com/1156870817?share=copy&fl=sv&fe=ci" type="video/mp4">
-      </video>
-    </div>
-
-    <div class="video-card" data-video="https://vimeo.com/1156871003?fl=ip&fe=ec">
-      <img src="thumbnails/edit3.png">
-      <video muted loop preload="metadata">
-        <source src="https://vimeo.com/1156871003?share=copy&fl=sv&fe=ci" type="video/mp4">
-      </video>
-    </div>
-
-    <div class="video-card" data-video="https://vimeo.com/1156871068?share=copy&fl=sv&fe=ci">
-      <img src="thumbnails/edit4.png">
-      <video muted loop preload="metadata">
-        <source src="https://vimeo.com/1156871068?share=copy&fl=sv&fe=ci" type="video/mp4">
-      </video>
-    </div>
+  <div class="video-card" data-video="https://player.vimeo.com/video/1156870631">
+    <img src="thumbnails/edit1.png" alt="Edit 1">
   </div>
+
+  <div class="video-card" data-video="https://player.vimeo.com/video/1156870817">
+    <img src="thumbnails/edit2.png" alt="Edit 2">
+  </div>
+
+  <div class="video-card" data-video="https://player.vimeo.com/video/1156871003">
+    <img src="thumbnails/edit3.png" alt="Edit 3">
+  </div>
+
+  <div class="video-card" data-video="https://player.vimeo.com/video/1156871068">
+    <img src="thumbnails/edit4.png" alt="Edit 4">
+  </div>
+
+</div>
+
 </section>
 
 <section id="about" class="about">
@@ -92,10 +83,19 @@ Every frame is crafted with purpose — whether it’s a fast-paced reel or a ci
 <div class="modal" id="videoModal">
   <div class="modal-content">
     <button class="nav-btn prev">‹</button>
-    <video id="modalVideo" controls playsinline></video>
+
+    <iframe
+      id="modalFrame"
+      src=""
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+
     <button class="nav-btn next">›</button>
   </div>
 </div>
+
 
 
 <footer>© 2025 Sai Abhinav Sandhiri</footer>

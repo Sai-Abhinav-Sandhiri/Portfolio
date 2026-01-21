@@ -1,13 +1,28 @@
-// Smooth scroll
+// =======================
+// MOBILE MENU
+// =======================
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// =======================
+// VIMEO MODAL CAROUSEL
+// =======================
+const modal = document.getElementById('videoModal');
+const modalFrame = document.getElementById('modalFrame');
 const cards = [...document.querySelectorAll('.video-card')];
 let currentIndex = 0;
 
+// Play selected video
 function playVideo(index) {
   currentIndex = index;
-  modalVideo.src = cards[index].dataset.video;
-  modalVideo.play();
+  modalFrame.src = cards[index].dataset.video + '?autoplay=1';
 }
 
+// Open modal on thumbnail click
 cards.forEach((card, index) => {
   card.addEventListener('click', () => {
     modal.classList.add('active');
@@ -15,14 +30,22 @@ cards.forEach((card, index) => {
   });
 });
 
+// Next button
 document.querySelector('.next').addEventListener('click', e => {
   e.stopPropagation();
   playVideo((currentIndex + 1) % cards.length);
 });
 
+// Previous button
 document.querySelector('.prev').addEventListener('click', e => {
   e.stopPropagation();
   playVideo((currentIndex - 1 + cards.length) % cards.length);
+});
+
+// Close modal on background click
+modal.addEventListener('click', () => {
+  modalFrame.src = '';
+  modal.classList.remove('active');
 });
 
 // Keyboard navigation
@@ -32,69 +55,13 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') {
     playVideo((currentIndex + 1) % cards.length);
   }
+
   if (e.key === 'ArrowLeft') {
     playVideo((currentIndex - 1 + cards.length) % cards.length);
   }
-});
 
-
-// Mobile menu
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-
-// Auto-detect video orientation
-document.querySelectorAll('.video-card video').forEach(video => {
-  video.addEventListener('loadedmetadata', () => {
-    const card = video.closest('.video-card');
-    if (video.videoWidth > video.videoHeight) {
-      card.classList.add('horizontal');
-    } else {
-      card.classList.add('vertical');
-    }
-  });
-});
-
-// Hover preview (desktop only)
-const isTouch = 'ontouchstart' in window;
-
-document.querySelectorAll('.video-card').forEach(card => {
-  const preview = card.querySelector('video');
-
-  if (!isTouch) {
-    card.addEventListener('mouseenter', () => {
-      preview.currentTime = 0;
-      preview.play();
-    });
-
-    card.addEventListener('mouseleave', () => {
-      preview.pause();
-      preview.currentTime = 0;
-    });
+  if (e.key === 'Escape') {
+    modalFrame.src = '';
+    modal.classList.remove('active');
   }
 });
-
-// Modal
-const modal = document.getElementById('videoModal');
-const modalVideo = document.getElementById('modalVideo');
-const modalContent = document.querySelector('.modal-content');
-
-document.querySelectorAll('.video-card').forEach(card => {
-  card.addEventListener('click', () => {
-    modalVideo.src = card.dataset.video;
-    modal.classList.add('active');
-    modalVideo.play();
-  });
-});
-
-modalContent.addEventListener('click', e => e.stopPropagation());
-
-modal.addEventListener('click', () => {
-  modalVideo.pause();
-  modalVideo.src = '';
-  modal.classList.remove('active');
-});
-
