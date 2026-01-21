@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Name | Video Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cinematic video editor specializing in reels and short-form content.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <h1 class="logo">Sai Abhinav Sandhiri</h1>
+  <div class="hamburger" id="hamburger">☰</div>
+  <ul id="navLinks">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h2 class="accent">VIDEO EDITOR</h2>
+  <h1>High-Impact Visual Storytelling</h1>
+  <p>I help creators and brands turn moments into stories that connect, inspire, and stay with the audience. Through cinematic editing, intentional pacing, and emotion-driven visuals, I transform raw footage into content that feels alive and meaningful.
+
+Every frame is crafted with purpose — whether it’s a fast-paced reel or a cinematic sequence — to capture attention, evoke emotion, and leave a lasting impression.</p>
+</section>
+
+<section id="work">
+  <h2 class="section-title">SELECTED PROJECTS</h2>
+
+  <div class="grid">
+    <div class="video-card" data-video="https://drive.google.com/file/d/1Yvsb-w-6YSg6LliNsXWFyqBsO6VCaFcc/view?usp=drive_link">
+      <img src="thumbnails/edit1.png">
+      <video muted loop preload="metadata">
+        <source src="https://drive.google.com/file/d/1Yvsb-w-6YSg6LliNsXWFyqBsO6VCaFcc/view?usp=drive_link" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-card" data-video="https://drive.google.com/file/d/1yCvDoYIUpuWQ301rWdUiHU5sbRcQYuqf/view?usp=drive_link">
+      <img src="thumbnails/edit2.png">
+      <video muted loop preload="metadata">
+        <source src="https://drive.google.com/file/d/1yCvDoYIUpuWQ301rWdUiHU5sbRcQYuqf/view?usp=drive_link" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-card" data-video="https://drive.google.com/file/d/1HVV6tJLgVs03TuSPNOn1l5Hz_KoO8BAX/view?usp=drive_link">
+      <img src="thumbnails/edit3.png">
+      <video muted loop preload="metadata">
+        <source src="https://drive.google.com/file/d/1HVV6tJLgVs03TuSPNOn1l5Hz_KoO8BAX/view?usp=drive_link" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-card" data-video="https://drive.google.com/file/d/1lJTY2pmHOwgY0e-8EsjieqHR5CEn_Gns/view?usp=drive_link">
+      <img src="thumbnails/edit4.png">
+      <video muted loop preload="metadata">
+        <source src="https://drive.google.com/file/d/1lJTY2pmHOwgY0e-8EsjieqHR5CEn_Gns/view?usp=drive_link" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2 class="section-title">ABOUT ME</h2>
+  <p>
+    I’m a creative video editor who enjoys transforming raw footage into visually compelling stories. I work primarily with short-form content, reels, and cinematic edits, with a strong focus on pacing, emotion, and viewer retention. I edit using DaVinci Resolve, Adobe Premiere Pro, CapCut, VN Video Editor, and Canva, adapting my workflow to suit different platforms and creative styles. Whether it’s a fast-paced reel or a polished cinematic edit, I aim to create content that feels modern, engaging, and impactful.
+  </p>
+</section>
+
+<section id="tools" class="tools">
+  <h2 class="section-title">TOOLS & SKILLS</h2>
+
+  <div class="tools-grid">
+    <div class="tool-card glow">DaVinci Resolve</div>
+    <div class="tool-card">Adobe Premiere Pro</div>
+    <div class="tool-card">CapCut</div>
+    <div class="tool-card">VN Video Editor</div>
+    <div class="tool-card">Canva</div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">CONTACT</h2>
+  <p>Email: va.isa.018@gmail.com</p>
+  <p>Instagram: @SAI_ABHINAV_28</p>
+  <p>Phone No.: 9515167797</p>
+</section>
+
+<div class="modal" id="videoModal">
+  <div class="modal-content">
+    <button class="nav-btn prev">‹</button>
+    <video id="modalVideo" controls playsinline></video>
+    <button class="nav-btn next">›</button>
+  </div>
+</div>
+
+
+<footer>© 2025 Sai Abhinav Sandhiri</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
